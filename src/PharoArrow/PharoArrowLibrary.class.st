@@ -79,6 +79,37 @@ PharoArrowLibrary >> garrow_boolean_data_type_new [
 	^ self ffiCall: 'void * garrow_boolean_data_type_new()'
 ]
 
+{ #category : 'buffer' }
+PharoArrowLibrary >> garrow_buffer_get_data: buffer [
+
+	^ self ffiCall: 'void* garrow_buffer_get_data (void* buffer)'
+]
+
+{ #category : 'buffer' }
+PharoArrowLibrary >> garrow_buffer_get_size: buffer [
+
+	^ self ffiCall: 'longlong garrow_buffer_get_size (void* buffer)'
+]
+
+{ #category : 'stream' }
+PharoArrowLibrary >> garrow_buffer_input_stream_new: buffer [
+
+	^ self ffiCall: 'void* garrow_buffer_input_stream_new (void* buffer)'
+]
+
+{ #category : 'buffer' }
+PharoArrowLibrary >> garrow_buffer_new_bytes: bytes [
+
+	^ self ffiCall: 'void* garrow_buffer_new_bytes (void* bytes)'
+]
+
+{ #category : 'stream' }
+PharoArrowLibrary >> garrow_buffer_output_stream_new: buffer [
+
+	^ self ffiCall:
+		  'void* garrow_buffer_output_stream_new (void* buffer)'
+]
+
 { #category : 'field' }
 PharoArrowLibrary >> garrow_field_new: name dataType: data_type [
 
@@ -173,6 +204,13 @@ PharoArrowLibrary >> garrow_list_array_builder_new: data_type error: errorPtrOrN
 PharoArrowLibrary >> garrow_list_data_type_new: valueField [
 
 	^ self ffiCall: 'void * garrow_list_data_type_new(void * valueField)'
+]
+
+{ #category : 'buffer' }
+PharoArrowLibrary >> garrow_resizable_buffer_new: initialSize error: error [
+
+	^ self ffiCall:
+		  'void* garrow_resizable_buffer_new (longlong initialSize, void* error)'
 ]
 
 { #category : 'field' }

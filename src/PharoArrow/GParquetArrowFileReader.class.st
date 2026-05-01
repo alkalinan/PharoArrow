@@ -15,6 +15,15 @@ GParquetArrowFileReader class >> on: path error: error [
 		  library: PharoParquetLibrary uniqueInstance
 ]
 
+{ #category : 'instance creation' }
+GParquetArrowFileReader class >> onArrowInputStream: source error: error [
+
+	^ self
+		  ffiCall:
+		  'GParquetArrowFileReader * gparquet_arrow_file_reader_new_arrow( void* source, void* error )'
+		  library: PharoParquetLibrary uniqueInstance
+]
+
 { #category : 'accessing' }
 GParquetArrowFileReader >> readTable [
 

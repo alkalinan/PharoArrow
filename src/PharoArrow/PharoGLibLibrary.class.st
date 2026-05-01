@@ -7,6 +7,25 @@ Class {
 }
 
 { #category : 'accessing - platform' }
+PharoGLibLibrary >> g_bytes_get_data: bytes size: sizePointer [
+
+	^ self ffiCall:
+		  'void* g_bytes_get_data (void* bytes, ByteArray sizePointer)'
+]
+
+{ #category : 'accessing - platform' }
+PharoGLibLibrary >> g_bytes_new: data size: size [
+
+	^ self ffiCall: 'void* g_bytes_new (ByteArray data, ulong size)'
+]
+
+{ #category : 'accessing - platform' }
+PharoGLibLibrary >> g_bytes_unref: bytes [
+
+	^ self ffiCall: 'void g_bytes_unref (void* bytes)'
+]
+
+{ #category : 'accessing - platform' }
 PharoGLibLibrary >> g_list_append: list with: data [
 
 	^ self ffiCall: 'GList * g_list_append (void* list, void* data)'

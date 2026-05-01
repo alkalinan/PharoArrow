@@ -14,6 +14,13 @@ PharoParquetLibrary >> gparquet_arrow_file_writer_close: writer error: errorPtrO
 ]
 
 { #category : 'accessing - platform' }
+PharoParquetLibrary >> gparquet_arrow_file_writer_new_arrow: schema sink: sink writerProperties: writerProperties error: error [
+
+	^ self ffiCall:
+		  'void* gparquet_arrow_file_writer_new_arrow (void* schema, void* sink, void* writerProperties, void* error)'
+]
+
+{ #category : 'accessing - platform' }
 PharoParquetLibrary >> gparquet_arrow_file_writer_new_path: schema path: path writerProperties: writer_properties error: error [
 
 	^ self ffiCall:
