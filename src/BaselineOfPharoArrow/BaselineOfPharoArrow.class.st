@@ -29,8 +29,5 @@ BaselineOfPharoArrow >> defineGroups: spec [
 { #category : 'baselines' }
 BaselineOfPharoArrow >> definePackages: spec [
 
-	spec
-		package: 'PharoArrow';
-		package: 'PharoArrow-Example'
-		with: [ spec requires: #( 'PharoArrow' ) ]
+	spec package: 'PharoArrow'
 ]
