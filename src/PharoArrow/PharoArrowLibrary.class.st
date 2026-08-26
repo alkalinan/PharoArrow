@@ -250,3 +250,10 @@ PharoArrowLibrary >> macLibraryName [
 	^ FFIMacLibraryFinder findAnyLibrary:
 		  #( 'libarrow-glib.dylib' )
 ]
+
+{ #category : 'accessing - platform' }
+PharoArrowLibrary >> unixLibraryName [
+	"Users should use unix32* or unix64*"
+
+	^ FFIUnix64LibraryFinder findAnyLibrary: #( 'libarrow-glib-dev' )
+]
